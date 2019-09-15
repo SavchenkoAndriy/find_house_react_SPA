@@ -1,5 +1,5 @@
 import React from 'react';
-import Preloader from "../preloader/Preloader";
+import Preloader from "../preloaderComponent/Preloader";
 
 
 const SearchCity = (props) => {

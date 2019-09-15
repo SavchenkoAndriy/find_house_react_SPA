@@ -1,14 +1,11 @@
 import React from 'react';
-import {selectHouseTC,addMarkerAC} from "../../redux/reducers/main";
+import {selectHouseTC, addMarkerAC,chooseHouseAC} from "../../redux/reducers/main";
 import {connect} from "react-redux";
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+let iconURL = 'http://labs.google.com/ridefinder/images/mm_20_green.png';
 
 
 class setGoogleMap extends React.Component {
-
-    // shouldComponentUpdate(nextProps, nextState, nextContext) {
-    //
-    // }
 
 
     mapClicked = (mapProps, map, clickEvent) => {
@@ -30,10 +27,6 @@ class setGoogleMap extends React.Component {
         };
 
         geocodeLatLng(geocoder);
-
-
-        //    console.log(clickEvent.latLng.lat()); координаты кликаемого места!!!!!!!!!!!!!!!!
-        //    console.log(clickEvent.latLng.lng());
     };
 
 
@@ -47,9 +40,21 @@ class setGoogleMap extends React.Component {
                 onClick={this.mapClicked}
             >
                 {this.props.selectHouseMarker &&
-                this.props.selectHouseMarker.map(e => {
+                this.props.selectHouseMarker.map(e =>{
                     return <Marker
                         position={{lat: e.lat, lng: e.lng}}
+                    />
+                })
+                }
+                {this.props.favorites.length > 0 &&
+                this.props.favorites.map(e =>{
+                    return <Marker
+                        icon={{
+                            url: iconURL,
+                            scaledSize: new this.props.google.maps.Size(32,32)
+                        }}
+                        onClick={()=>this.props.chooseHouse(e)}
+                        position={{lat: e.Marker[0].lat, lng: e.Marker[0].lng}}
                     />
                 })
                 }
@@ -63,9 +68,7 @@ let MapStateToProps = (state) => {
     return {
         center: state.Main.center,
         selectHouseMarker: state.Main.selectHouseMarker,
-        // cityList: state.Main.cityList,
-        // region: state.Main.region,
-        // regionList: state.Main.regionList,
+        favorites: state.Main.favorites,
     }
 };
 
@@ -76,6 +79,9 @@ let MapDispatchToProps = (dispatch) => {
         },
         addMarker: (coordinates) => {
             dispatch(addMarkerAC(coordinates))
+        },
+        chooseHouse: (house) => {
+            dispatch(chooseHouseAC(house))
         }
     }
 };

@@ -13,6 +13,8 @@ const SET_REGION = 'SET_REGION';
 const SELECT_HOUSE = 'SELECT_HOUSE';
 const ADD_MARKER = 'ADD_MARKER';
 const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
+const GET_FAVORITES = 'GET_FAVORITES';
+const CHOOSE_HOUSE = 'CHOOSE_HOUSE';
 
 
 
@@ -32,7 +34,8 @@ let initialState = {
     },
     selectedHomeInfo: undefined,
     selectHouseMarker: [],
-    favorites: []
+    favorites: [],
+    showFavorites: false,
 };
 
 const Main = (state = initialState, action) => {
@@ -130,15 +133,24 @@ const Main = (state = initialState, action) => {
         }
 
         case SELECT_HOUSE: {
+            let NewState = {...state};
+            NewState.favorites = [...state.favorites];
+            if (NewState.favorites.length >0){
+                NewState.favorites.map(e => {
+                    return e.mouseover = false
+                });
+            }
             let xml = action.house;
             let result = JSON.parse(convert.xml2json(xml, {compact: true, spaces: 4}));
             if (result['SearchResults:searchresults'].response !== undefined){
                 let homeInfo = result['SearchResults:searchresults'].response.results.result;
-                return {...state,selectedHomeInfo: homeInfo}
+                return {...NewState,selectedHomeInfo: homeInfo}
             }
 
+
+
             return {
-                ...state,
+                ...NewState,
                 selectedHomeInfo: 'Информація відсутня'
             }
         }
@@ -153,13 +165,36 @@ const Main = (state = initialState, action) => {
 
         case ADD_TO_FAVORITES: {
             let NewState = {...state};
+            NewState.favorites = [...state.favorites];
             let Favorites = {
+                id: state.favorites.length+1,
                 Info: state.selectedHomeInfo,
-                Marker: state.selectHouseMarker
+                Marker: state.selectHouseMarker,
+                mouseover: false,
             };
+
             NewState.favorites.push(Favorites);
+            NewState.selectHouseMarker = [];
 
             return {...NewState};
+        }
+
+        case GET_FAVORITES: {
+            return {
+                ...state,
+                showFavorites: true
+            };
+        }
+
+        case CHOOSE_HOUSE: {
+            let NewState = {...state};
+            NewState.favorites = [...state.favorites];
+            NewState.favorites.map(e => {
+                if (e.id === action.house.id){
+                    return e.mouseover = true
+                } else return e.mouseover = false
+            });
+            return {...NewState}
         }
 
         default:
@@ -295,6 +330,20 @@ export const addToFavoritesAC = () => {
         type: ADD_TO_FAVORITES,
     }
 };
+
+export const getFavoritesAC = () => {
+    return {
+        type: GET_FAVORITES,
+    }
+};
+
+export const chooseHouseAC = (house) => {
+    return {
+        type: CHOOSE_HOUSE,
+        house
+    }
+};
+
 
 
 export default Main;
