@@ -17,7 +17,6 @@ const GET_FAVORITES = 'GET_FAVORITES';
 const CHOOSE_HOUSE = 'CHOOSE_HOUSE';
 
 
-
 let initialState = {
     isFetching: false,
     isCitySelected: false,
@@ -28,7 +27,7 @@ let initialState = {
     regionChildrenList: [],
     region: '',
     regionList: [],
-    center:{
+    center: {
         lat: 50.9071953,
         lng: 34.7991894
     },
@@ -39,13 +38,9 @@ let initialState = {
 };
 
 const Main = (state = initialState, action) => {
-
     switch (action.type) {
-
         case GET_CITY_LIST: {
-
             let cityList = action.list.geonames.filter(e => e.population > state.population);
-
             return {
                 ...state,
                 cityList: cityList
@@ -65,7 +60,9 @@ const Main = (state = initialState, action) => {
                 city: action.value,
                 region: '',
                 regionList: [],
-                isCitySelected: false
+                isCitySelected: false,
+                selectedHomeInfo: undefined,
+                isRegionSelected: false
             }
         }
 
@@ -74,38 +71,31 @@ const Main = (state = initialState, action) => {
                 ...state,
                 city: action.city.name,
                 cityList: [],
-                isCitySelected: true};
+                isCitySelected: true,
+            };
         }
 
         case SET_REGION_CHILDREN_LIST: {
-
             let xml = action.regionChildrenList;
             let result = JSON.parse(convert.xml2json(xml, {compact: true, spaces: 4}));
-
             let regionChildrenList = result['RegionChildren:regionchildren'].response.list.region;
-
             return {
                 ...state,
                 regionChildrenList: regionChildrenList
             };
         }
 
-
         case FILTER_REGION_LIST: {
             let NewState = {...state};
             let filterLength = NewState.region.length;
-
-            if (NewState.regionChildrenList !== undefined){
+            if (NewState.regionChildrenList !== undefined) {
                 NewState.regionList = NewState.regionChildrenList.filter(
-                    e => e.name._text.slice(0,filterLength).toString().toLowerCase() === NewState.region.toString().toLowerCase()
+                    e => e.name._text.slice(0, filterLength).toString().toLowerCase() === NewState.region.toString().toLowerCase()
                 );
             }
-
-
-            if (NewState.regionList.length > 5){
-                NewState.regionList.splice(5,NewState.regionList.length)
+            if (NewState.regionList.length > 5) {
+                NewState.regionList.splice(5, NewState.regionList.length)
             }
-
             return {...NewState};
         }
 
@@ -123,10 +113,9 @@ const Main = (state = initialState, action) => {
                 lat: Number(action.region.latitude._text),
                 lng: Number(action.region.longitude._text)
             };
-
             return {
                 ...state,
-                center:center,
+                center: center,
                 isRegionSelected: true,
                 selectedHomeInfo: undefined,
             };
@@ -135,20 +124,17 @@ const Main = (state = initialState, action) => {
         case SELECT_HOUSE: {
             let NewState = {...state};
             NewState.favorites = [...state.favorites];
-            if (NewState.favorites.length >0){
+            if (NewState.favorites.length > 0) {
                 NewState.favorites.map(e => {
-                    return e.mouseover = false
+                    return e.select = false
                 });
             }
             let xml = action.house;
             let result = JSON.parse(convert.xml2json(xml, {compact: true, spaces: 4}));
-            if (result['SearchResults:searchresults'].response !== undefined){
+            if (result['SearchResults:searchresults'].response !== undefined) {
                 let homeInfo = result['SearchResults:searchresults'].response.results.result;
-                return {...NewState,selectedHomeInfo: homeInfo}
+                return {...NewState, selectedHomeInfo: homeInfo}
             }
-
-
-
             return {
                 ...NewState,
                 selectedHomeInfo: 'Информація відсутня'
@@ -159,7 +145,6 @@ const Main = (state = initialState, action) => {
             let NewState = {...state};
             NewState.selectHouseMarker = [];
             NewState.selectHouseMarker.push(action.coordinates);
-
             return {...NewState};
         }
 
@@ -167,22 +152,20 @@ const Main = (state = initialState, action) => {
             let NewState = {...state};
             NewState.favorites = [...state.favorites];
             let Favorites = {
-                id: state.favorites.length+1,
+                id: state.favorites.length + 1,
                 Info: state.selectedHomeInfo,
                 Marker: state.selectHouseMarker,
-                mouseover: false,
+                select: false,
             };
-
             NewState.favorites.push(Favorites);
             NewState.selectHouseMarker = [];
-
             return {...NewState};
         }
 
         case GET_FAVORITES: {
             return {
                 ...state,
-                showFavorites: true
+                showFavorites: !state.showFavorites
             };
         }
 
@@ -190,9 +173,9 @@ const Main = (state = initialState, action) => {
             let NewState = {...state};
             NewState.favorites = [...state.favorites];
             NewState.favorites.map(e => {
-                if (e.id === action.house.id){
-                    return e.mouseover = true
-                } else return e.mouseover = false
+                if (e.id === action.house.id) {
+                    return e.select = true
+                } else return e.select = false
             });
             return {...NewState}
         }
@@ -204,146 +187,88 @@ const Main = (state = initialState, action) => {
 
 
 const isFetchingAC = (isFetching) => {
-    return {
-        type: IS_FETCHING,
-        isFetching
-    }
+    return {type: IS_FETCHING, isFetching}
 };
 
-
-export const getCityListTC = (data) => {
-    return (dispatch) => {
-        dispatch(isFetchingAC(true));
-        dispatch(setCityValueAC(data));
-        API.getCityList(data).then(response => {
-            dispatch(getCityListAC(response));
-            dispatch(isFetchingAC(false));
-        });
-    }
+export const getCityListTC = (data) => async (dispatch) => {
+    dispatch(isFetchingAC(true));
+    dispatch(setCityValueAC(data));
+    const response = await API.getCityList(data);
+    dispatch(getCityListAC(response));
+    dispatch(isFetchingAC(false));
 };
 
 const getCityListAC = (list) => {
-    return {
-        type: GET_CITY_LIST,
-        list
-    }
+    return {type: GET_CITY_LIST, list}
 };
 
 const setCityValueAC = (value) => {
-    return {
-        type: SET_CITY_INPUT_VALUE,
-        value
-    }
+    return {type: SET_CITY_INPUT_VALUE, value}
 };
 
 const setCityAC = (city) => {
-    return {
-        type: SET_CITY,
-        city
-    }
+    return {type: SET_CITY, city}
 };
 
 const setRegionChildrenListAC = (regionChildrenList) => {
-    return {
-        type: SET_REGION_CHILDREN_LIST,
-        regionChildrenList
-    }
+    return {type: SET_REGION_CHILDREN_LIST, regionChildrenList}
 };
 
-
-export const setCityTC = (city) => {
-    return (dispatch) => {
-        dispatch(isFetchingAC(true));
-        dispatch(setCityAC(city));
-        API.getRegion(city).then(response => {
-            dispatch(setRegionChildrenListAC(response));
-            dispatch(isFetchingAC(false));
-        });
-    }
+export const setCityTC = (city) => async (dispatch) => {
+    dispatch(isFetchingAC(true));
+    const response = await API.getRegion(city);
+    dispatch(setRegionChildrenListAC(response));
+    dispatch(setCityAC(city));
+    dispatch(isFetchingAC(false));
 };
 
-
-export const getRegionListTC = (data) => {
-    return (dispatch) => {
-
-        dispatch(setRegionValueAC(data));
-        dispatch(filterRegionListAC(data));
-    }
+export const getRegionListTC = (data) => (dispatch) => {
+    dispatch(setRegionValueAC(data));
+    dispatch(filterRegionListAC(data));
 };
 
 const setRegionValueAC = (value) => {
-    return {
-        type: SET_REGION_INPUT_VALUE,
-        value
-    }
+    return {type: SET_REGION_INPUT_VALUE, value}
 };
 
 const filterRegionListAC = (filter) => {
-    return {
-        type: FILTER_REGION_LIST,
-        filter
-    }
+    return {type: FILTER_REGION_LIST, filter}
 };
 
-
-export const setRegionTC = (region) => {
-    return (dispatch) => {
-        dispatch(setRegionValueAC(region.name._text));
-        dispatch(setRegionAC(region));
-    }
+export const setRegionTC = (region) => (dispatch) => {
+    dispatch(setRegionValueAC(region.name._text));
+    dispatch(setRegionAC(region));
 };
 
 const setRegionAC = (region) => {
-    return {
-        type: SET_REGION,
-        region
-    }
+    return {type: SET_REGION, region}
 };
 
 const selectHouseAC = (house) => {
-    return {
-        type: SELECT_HOUSE,
-        house
-    }
+    return {type: SELECT_HOUSE, house}
 };
 
 export const addMarkerAC = (coordinates) => {
-    return {
-        type: ADD_MARKER,
-        coordinates
-    }
+    return {type: ADD_MARKER, coordinates}
 };
 
-export const selectHouseTC = (address) => {
-    return (dispatch) => {
-        dispatch(isFetchingAC(true));
-        API.selectHouse(address).then(response => {
-            dispatch(selectHouseAC(response));
-            dispatch(isFetchingAC(false));
-        });
-    }
+export const selectHouseTC = (address) => async (dispatch) => {
+    dispatch(isFetchingAC(true));
+    const response = await API.selectHouse(address);
+    dispatch(selectHouseAC(response));
+    dispatch(isFetchingAC(false));
 };
-
 
 export const addToFavoritesAC = () => {
-    return {
-        type: ADD_TO_FAVORITES,
-    }
+    return {type: ADD_TO_FAVORITES,}
 };
 
 export const getFavoritesAC = () => {
-    return {
-        type: GET_FAVORITES,
-    }
+    return {type: GET_FAVORITES,}
 };
 
 export const chooseHouseAC = (house) => {
-    return {
-        type: CHOOSE_HOUSE,
-        house
-    }
+    return {type: CHOOSE_HOUSE, house}
 };
-
-
 
 export default Main;

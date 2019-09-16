@@ -1,17 +1,14 @@
 import React from 'react';
 import Preloader from "../preloaderComponent/Preloader";
 
-
 const SearchCity = (props) => {
-
     let getCityList = (e) => {
         props.getCityList(e.target.value);
     };
 
-
     return (
-        <div>
-            <p>Почніть вводити назву міста, та клікніть на потрібне</p>
+        <div className={'input__wrap'}>
+            <p>Почніть вводити назву міста, та виберіть потрібне</p>
             <input type={'text'} value={props.city} onChange={getCityList}/>
             {props.isFetching ? <Preloader/> :
                 <ul>

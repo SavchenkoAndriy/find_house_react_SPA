@@ -3,20 +3,10 @@ import {getCityListTC, setCityTC, getRegionListTC, setRegionTC} from "../../redu
 import {connect} from "react-redux";
 import SearchCity from "./SearchCity";
 import SearchRegion from "./SearchRegion";
+import './search.sass';
 
 
 class setCityList extends React.Component {
-
-
-    // componentDidMount() {
-    //     this.props.getCityList('n');
-    // }
-
-    // shouldComponentUpdate(nextProps, nextState, nextContext) {
-    //     return this.props.cityList !== nextProps.cityList
-    // }
-
-
     render() {
         return <>
             <SearchCity
