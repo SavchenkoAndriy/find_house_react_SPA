@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5295e969-2684-432b-ac7d-424776de3868" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/searchComponent/search.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/SelectedHouseComponent/House.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SelectedHouseComponent/House.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/SelectedHouseComponent/SelectedHouseContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SelectedHouseComponent/SelectedHouseContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/favoritesComponent/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/favoritesComponent/favorites.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/mapComponent/GoogleMapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/mapComponent/GoogleMapContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/preloaderComponent/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/preloaderComponent/Preloader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/searchComponent/SearchCity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/searchComponent/SearchCity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/searchComponent/SearchContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/searchComponent/SearchContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,13 +33,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/SelectedHouseContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
-              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="44" />
+              <caret line="10" column="97" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="97" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -61,12 +57,12 @@
         <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="38" />
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchContainer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
@@ -79,10 +75,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/searchComponent/search.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            <state>
+              <caret selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -139,19 +147,19 @@
         <option value="$PROJECT_DIR$/src/API/api.js" />
         <option value="$PROJECT_DIR$/src/component/mapComponent/GoogleMapContainer.js" />
         <option value="$PROJECT_DIR$/src/component/preloaderComponent/Preloader.js" />
-        <option value="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js" />
         <option value="$PROJECT_DIR$/src/component/favoritesComponent/favorites.js" />
-        <option value="$PROJECT_DIR$/src/component/SelectedHouseComponent/House.js" />
         <option value="$PROJECT_DIR$/src/index.sass" />
-        <option value="$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js" />
         <option value="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.sass" />
-        <option value="$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass" />
         <option value="$PROJECT_DIR$/src/component/searchComponent/SearchContainer.js" />
-        <option value="$PROJECT_DIR$/src/component/searchComponent/SearchCity.js" />
-        <option value="$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js" />
         <option value="$PROJECT_DIR$/src/component/SelectedHouseComponent/SelectedHouseContainer.js" />
         <option value="$PROJECT_DIR$/src/component/searchComponent/search.sass" />
         <option value="$PROJECT_DIR$/src/redux/reducers/main.js" />
+        <option value="$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js" />
+        <option value="$PROJECT_DIR$/src/component/searchComponent/SearchCity.js" />
+        <option value="$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js" />
+        <option value="$PROJECT_DIR$/src/component/SelectedHouseComponent/House.js" />
+        <option value="$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js" />
+        <option value="$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass" />
       </list>
     </option>
   </component>
@@ -196,6 +204,13 @@
               <item name="find_house" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="find_house" type="b2602c69:ProjectViewProjectNode" />
+              <item name="find_house" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="favoritesComponent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="find_house" type="b2602c69:ProjectViewProjectNode" />
@@ -286,7 +301,7 @@
       <workItem from="1568319352045" duration="11240000" />
       <workItem from="1568407595637" duration="7092000" />
       <workItem from="1568496726869" duration="7431000" />
-      <workItem from="1568583872729" duration="9227000" />
+      <workItem from="1568583872729" duration="10482000" />
     </task>
     <task id="LOCAL-00001" summary="app">
       <created>1568410641360</created>
@@ -295,11 +310,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568410641361</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactoring + style">
+      <created>1568593239851</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568593239852</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93909000" />
+    <option name="totallyTimeSpent" value="95164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
@@ -330,7 +352,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="app" />
-    <option name="LAST_COMMIT_MESSAGE" value="app" />
+    <MESSAGE value="refactoring + style" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring + style" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/example/Serials.js" />
@@ -453,50 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/House.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchCity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/favorites.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -507,27 +486,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="110" selection-start-line="9" selection-start-column="110" selection-end-line="9" selection-end-column="110" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/searchComponent/search.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="38" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -551,6 +514,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/searchComponent/search.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchRegion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -558,6 +535,60 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/House.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/searchComponent/SearchCity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/SelectedHouseComponent/HouseInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/favoritesContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="97" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="97" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/favoritesComponent/Favorites.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>

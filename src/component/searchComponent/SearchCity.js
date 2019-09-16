@@ -9,6 +9,7 @@ const SearchCity = (props) => {
     return (
         <div className={'input__wrap'}>
             <p>Почніть вводити назву міста, та виберіть потрібне</p>
+            <p>Для полів вводу використовуйте Англійську мову</p>
             <input type={'text'} value={props.city} onChange={getCityList}/>
             {props.isFetching ? <Preloader/> :
                 <ul>

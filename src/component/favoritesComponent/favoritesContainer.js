@@ -8,6 +8,7 @@ class FavoritesList extends React.Component {
         return (
             <div className={'favorites__wrap'}>
                 {this.props.favorites.length > 0 && <button onClick={this.props.getFavorites}>Показати/Сховати Вибрані</button>}
+                {this.props.showFavorites && <div>Клікнувши на мітку на карті, будинок виділиться</div>}
                 {this.props.showFavorites && <Favorites favorites={this.props.favorites}/>}
             </div>
         )

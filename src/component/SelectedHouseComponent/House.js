@@ -5,7 +5,7 @@ const House = (props) => {
     let Info = props.selectedHomeInfo;
 
     if (Info === 'Информація відсутня'){
-        return <div>{Info}</div>;
+        return <div className={'HouseInfo'}>{Info}</div>;
     }else if (Info){
         return (
             <div className={'House'}>

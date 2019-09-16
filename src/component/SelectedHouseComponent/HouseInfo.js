@@ -1,9 +1,7 @@
 import React from 'react';
 import './HouseInfo.sass';
 
-const HouseInfo = (props) => {
-    let Info = props.Info;
-
+const HouseInfo = ({Info}) => {
     return (
         <div className={'HouseInfo'}>
             {Info.address.street && <p>Адресса {Info.address.street._text}</p>}
