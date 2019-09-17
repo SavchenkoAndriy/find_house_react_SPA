@@ -11,7 +11,7 @@ const SearchRegion = (props) => {
             <input type={'text'} value={props.region} onChange={getRegionList}/>
             <ul>
                 {props.regionList && props.regionList.map(e =>
-                    <li onClick={() => props.setRegion(e)}>{e.name._text}</li>
+                    <li key={e.name._text +'region'} onClick={() => props.setRegion(e)}>{e.name._text}</li>
                 )}
             </ul>
         </div>

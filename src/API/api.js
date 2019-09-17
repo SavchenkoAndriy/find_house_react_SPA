@@ -2,6 +2,7 @@ import * as axios from 'axios';
 
 const instance = axios.create({
     baseURL: 'https://cors-anywhere.herokuapp.com/https://www.zillow.com/webservice/',
+    setRequestHeader: 'X-Requested-With'
 });
 
 const location = axios.create({

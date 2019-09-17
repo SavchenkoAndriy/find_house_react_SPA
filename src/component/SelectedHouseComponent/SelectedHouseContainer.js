@@ -21,6 +21,7 @@ let MapStateToProps = (state) => {
     return {
         selectedHomeInfo: state.Main.selectedHomeInfo,
         isRegionSelected: state.Main.isRegionSelected,
+        selectedHomeInfoError: state.Main.selectedHomeInfoError
     }
 };
 

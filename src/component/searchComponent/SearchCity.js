@@ -14,7 +14,7 @@ const SearchCity = (props) => {
             {props.isFetching ? <Preloader/> :
                 <ul>
                     {props.cityList && props.cityList.map(e =>
-                        <li onClick={() => props.setCity(e)}>{e.name} штат {e.adminName1}</li>
+                        <li key={e.name + e.adminName1} onClick={() => props.setCity(e)}>{e.name} штат {e.adminName1}</li>
                     )}
                 </ul>
             }

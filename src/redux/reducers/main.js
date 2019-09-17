@@ -35,6 +35,7 @@ let initialState = {
     selectHouseMarker: [],
     favorites: [],
     showFavorites: false,
+    selectedHomeInfoError: true
 };
 
 const Main = (state = initialState, action) => {
@@ -133,11 +134,12 @@ const Main = (state = initialState, action) => {
             let result = JSON.parse(convert.xml2json(xml, {compact: true, spaces: 4}));
             if (result['SearchResults:searchresults'].response !== undefined) {
                 let homeInfo = result['SearchResults:searchresults'].response.results.result;
-                return {...NewState, selectedHomeInfo: homeInfo}
+                return {...NewState, selectedHomeInfo: homeInfo,selectedHomeInfoError: false}
             }
             return {
                 ...NewState,
-                selectedHomeInfo: 'Информація відсутня'
+                selectedHomeInfo: true,
+                selectedHomeInfoError: true
             }
         }
 
